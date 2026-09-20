@@ -8,14 +8,14 @@ const setwelcome = requireAdmin(async (ctx) => {
   const text = (ctx.message.text || '').split(/\s+/).slice(1).join(' ').trim()
     || ctx.message.reply_to_message?.text
     || ctx.message.reply_to_message?.caption;
-  if (!text) return safeReply(ctx, '❌ Usage: <code>/setwelcome &lt;text&gt;</code>\nSupports {first} {last} {mention} {username} {chatname} {count}');
+  if (!text) return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Usage: <code>/setwelcome &lt;text&gt;</code>\nSupports {first} {last} {mention} {username} {chatname} {count}', { parse_mode: 'HTML' });
   await updateGroup(ctx.chat.id, { 'welcome.text': text, 'welcome.enabled': true });
-  await safeReply(ctx, '✅ Welcome message set.');
+  await safeReply(ctx, '<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Welcome message set.', { parse_mode: 'HTML' });
 });
 
 const resetwelcome = requireAdmin(async (ctx) => {
   await updateGroup(ctx.chat.id, { 'welcome.text': 'Welcome, {mention}, to <b>{chatname}</b>!' });
-  await safeReply(ctx, '✅ Welcome reset to default.');
+  await safeReply(ctx, '<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Welcome reset to default.', { parse_mode: 'HTML' });
 });
 
 const welcome = requireAdmin(async (ctx) => {
@@ -23,42 +23,42 @@ const welcome = requireAdmin(async (ctx) => {
   const g = await getGroup(ctx.chat.id);
   if (!arg) {
     return safeReply(ctx,
-      `<b>Welcome settings</b>\nEnabled: <b>${g.welcome.enabled}</b>\nClean: <b>${g.welcome.clean}</b>\n\nText:\n<pre>${escapeHtml(g.welcome.text)}</pre>`);
+      `<tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> <b>Welcome settings</b>\nEnabled: <b>${g.welcome.enabled}</b>\nClean: <b>${g.welcome.clean}</b>\n\nText:\n<pre>${escapeHtml(g.welcome.text)}</pre>`, { parse_mode: 'HTML' });
   }
-  if (['on', 'yes'].includes(arg)) { await updateGroup(ctx.chat.id, { 'welcome.enabled': true }); return safeReply(ctx, '✅ Welcomes enabled.'); }
-  if (['off', 'no'].includes(arg)) { await updateGroup(ctx.chat.id, { 'welcome.enabled': false }); return safeReply(ctx, '🔕 Welcomes disabled.'); }
-  return safeReply(ctx, '❌ Usage: <code>/welcome on|off</code>');
+  if (['on', 'yes'].includes(arg)) { await updateGroup(ctx.chat.id, { 'welcome.enabled': true }); return safeReply(ctx, '<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Welcomes enabled.', { parse_mode: 'HTML' }); }
+  if (['off', 'no'].includes(arg)) { await updateGroup(ctx.chat.id, { 'welcome.enabled': false }); return safeReply(ctx, '<tg-emoji emoji-id="5350332462473944452">🔇</tg-emoji> Welcomes disabled.', { parse_mode: 'HTML' }); }
+  return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Usage: <code>/welcome on|off</code>', { parse_mode: 'HTML' });
 });
 
 const cleanwelcome = requireAdmin(async (ctx) => {
   const arg = ((ctx.message.text || '').split(/\s+/)[1] || '').toLowerCase();
-  if (!['on', 'off'].includes(arg)) return safeReply(ctx, '❌ Usage: <code>/cleanwelcome on|off</code>');
+  if (!['on', 'off'].includes(arg)) return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Usage: <code>/cleanwelcome on|off</code>', { parse_mode: 'HTML' });
   await updateGroup(ctx.chat.id, { 'welcome.clean': arg === 'on' });
-  await safeReply(ctx, `✅ Clean welcome ${arg}.`);
+  await safeReply(ctx, `<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Clean welcome ${arg}.`, { parse_mode: 'HTML' });
 });
 
 const setgoodbye = requireAdmin(async (ctx) => {
   const text = (ctx.message.text || '').split(/\s+/).slice(1).join(' ').trim()
     || ctx.message.reply_to_message?.text;
-  if (!text) return safeReply(ctx, '❌ Usage: <code>/setgoodbye &lt;text&gt;</code>');
+  if (!text) return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Usage: <code>/setgoodbye &lt;text&gt;</code>', { parse_mode: 'HTML' });
   await updateGroup(ctx.chat.id, { 'goodbye.text': text, 'goodbye.enabled': true });
-  await safeReply(ctx, '✅ Goodbye message set.');
+  await safeReply(ctx, '<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Goodbye message set.', { parse_mode: 'HTML' });
 });
 
 const resetgoodbye = requireAdmin(async (ctx) => {
   await updateGroup(ctx.chat.id, { 'goodbye.text': '{first} has left the group.' });
-  await safeReply(ctx, '✅ Goodbye reset to default.');
+  await safeReply(ctx, '<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Goodbye reset to default.', { parse_mode: 'HTML' });
 });
 
 const goodbye = requireAdmin(async (ctx) => {
   const arg = ((ctx.message.text || '').split(/\s+/)[1] || '').toLowerCase();
   const g = await getGroup(ctx.chat.id);
   if (!arg) {
-    return safeReply(ctx, `<b>Goodbye settings</b>\nEnabled: <b>${g.goodbye.enabled}</b>\n\nText:\n<pre>${escapeHtml(g.goodbye.text)}</pre>`);
+    return safeReply(ctx, `<tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> <b>Goodbye settings</b>\nEnabled: <b>${g.goodbye.enabled}</b>\n\nText:\n<pre>${escapeHtml(g.goodbye.text)}</pre>`, { parse_mode: 'HTML' });
   }
-  if (['on', 'yes'].includes(arg)) { await updateGroup(ctx.chat.id, { 'goodbye.enabled': true }); return safeReply(ctx, '✅ Goodbyes enabled.'); }
-  if (['off', 'no'].includes(arg)) { await updateGroup(ctx.chat.id, { 'goodbye.enabled': false }); return safeReply(ctx, '🔕 Goodbyes disabled.'); }
-  return safeReply(ctx, '❌ Usage: <code>/goodbye on|off</code>');
+  if (['on', 'yes'].includes(arg)) { await updateGroup(ctx.chat.id, { 'goodbye.enabled': true }); return safeReply(ctx, '<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Goodbyes enabled.', { parse_mode: 'HTML' }); }
+  if (['off', 'no'].includes(arg)) { await updateGroup(ctx.chat.id, { 'goodbye.enabled': false }); return safeReply(ctx, '<tg-emoji emoji-id="5350332462473944452">🔇</tg-emoji> Goodbyes disabled.', { parse_mode: 'HTML' }); }
+  return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Usage: <code>/goodbye on|off</code>', { parse_mode: 'HTML' });
 });
 
 async function newMemberHandler(ctx, next) {
@@ -108,10 +108,10 @@ const cleanservice = requireAdmin(async (ctx) => {
   const arg = ((ctx.message.text || '').split(/\s+/)[1] || '').toLowerCase();
   if (!['on', 'off'].includes(arg)) {
     const g = await getGroup(ctx.chat.id);
-    return safeReply(ctx, `Clean service: <b>${g.cleanService ? 'on' : 'off'}</b>.\nUsage: <code>/cleanservice on|off</code>`);
+    return safeReply(ctx, `<tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> Clean service: <b>${g.cleanService ? 'on' : 'off'}</b>.\nUsage: <code>/cleanservice on|off</code>`, { parse_mode: 'HTML' });
   }
   await updateGroup(ctx.chat.id, { cleanService: arg === 'on' });
-  await safeReply(ctx, `✅ Clean service ${arg}.`);
+  await safeReply(ctx, `<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Clean service ${arg}.`, { parse_mode: 'HTML' });
 });
 
 module.exports = {
