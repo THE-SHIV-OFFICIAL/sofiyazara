@@ -7,7 +7,7 @@ const HELP_MENU = {
     title:
       `<blockquote>` +
       `╔══════════════════════╗\n` +
-      `║  📜  <b>${ff('ѕσƒιуα Commands')}</b>  📜  ║\n` +
+      `║  <tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji>  <b>${ff('ѕσƒιуα Commands')}</b>  <tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji>  ║\n` +
       `╚══════════════════════╝\n\n` +
       `sєℓєcт α cατєɢσяყ вєℓσω 👇` +
       `</blockquote>`,
@@ -28,88 +28,88 @@ const HELP_MENU = {
   },
 
   help_admin: {
-    title: `<blockquote>╔══════════════╗\n║ 👮 <b>${ff('Admin')}</b> 👮 ║\n╚══════════════╝\n\n/promote /demote /fullpromote\n/title /adminlist /invitelink\n/settitle /setdescription /setchatphoto</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6129739490484294910">👑</tg-emoji> <b>${ff('Admin')}</b> <tg-emoji emoji-id="6129739490484294910">👑</tg-emoji> ║\n╚══════════════╝\n\n/promote /demote /fullpromote\n/title /adminlist /invitelink\n/settitle /setdescription /setchatphoto</blockquote>`,
     back: 'help_main',
   },
   help_bans: {
-    title: `<blockquote>╔══════════════╗\n║ 🔨 <b>${ff('Bans')}</b> 🔨 ║\n╚══════════════╝\n\n/ban /sban /dban /tban /unban\n/kick /skick /kickme /banme</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5213415377593185638">⛔️</tg-emoji> <b>${ff('Bans')}</b> <tg-emoji emoji-id="5213415377593185638">⛔️</tg-emoji> ║\n╚══════════════╝\n\n/ban /sban /dban /tban /unban\n/kick /skick /kickme /banme</blockquote>`,
     back: 'help_main',
   },
   help_mutes: {
-    title: `<blockquote>╔══════════════╗\n║ 🔇 <b>${ff('Mutes')}</b> 🔇 ║\n╚══════════════╝\n\n/mute /smute /dmute /tmute /unmute</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5350332462473944452">🔇</tg-emoji> <b>${ff('Mutes')}</b> <tg-emoji emoji-id="5350332462473944452">🔇</tg-emoji> ║\n╚══════════════╝\n\n/mute /smute /dmute /tmute /unmute</blockquote>`,
     back: 'help_main',
   },
   help_warns: {
-    title: `<blockquote>╔══════════════╗\n║ ⚠️ <b>${ff('Warnings')}</b> ⚠️ ║\n╚══════════════╝\n\n/warn /swarn /dwarn /warns\n/resetwarns /rmwarn\n/setwarnlimit /warnmode mute|kick|ban</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6102938383456146362">⚠️</tg-emoji> <b>${ff('Warnings')}</b> <tg-emoji emoji-id="6102938383456146362">⚠️</tg-emoji> ║\n╚══════════════╝\n\n/warn /swarn /dwarn /warns\n/resetwarns /rmwarn\n/setwarnlimit /warnmode mute|kick|ban</blockquote>`,
     back: 'help_main',
   },
   help_notes: {
-    title: `<blockquote>╔══════════════╗\n║ 📝 <b>${ff('Notes')}</b> 📝 ║\n╚══════════════╝\n\n/save name [content]\n/get name  (or #name)\n/clear name  /clearall\n/notes</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6100130376787694459">🔖</tg-emoji> <b>${ff('Notes')}</b> <tg-emoji emoji-id="6100130376787694459">🔖</tg-emoji> ║\n╚══════════════╝\n\n/save name [content]\n/get name  (or #name)\n/clear name  /clearall\n/notes</blockquote>`,
     back: 'help_main',
   },
   help_filters: {
-    title: `<blockquote>╔══════════════╗\n║ 🔍 <b>${ff('Filters')}</b> 🔍 ║\n╚══════════════╝\n\n/filter trigger reply\n/stop trigger  /stopall\n/filters</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5215538577496090960">💬</tg-emoji> <b>${ff('Filters')}</b> <tg-emoji emoji-id="5215538577496090960">💬</tg-emoji> ║\n╚══════════════╝\n\n/filter trigger reply\n/stop trigger  /stopall\n/filters</blockquote>`,
     back: 'help_main',
   },
   help_greet: {
-    title: `<blockquote>╔══════════════╗\n║ 👋 <b>${ff('Greetings')}</b> 👋 ║\n╚══════════════╝\n\n/setwelcome  /resetwelcome\n/welcome on|off  /cleanwelcome\n/setgoodbye  /resetgoodbye\n/goodbye on|off  /cleanservice\n\n<b>${ff('Placeholders')}:</b>\n{first} {last} {fullname} {username}\n{mention} {id} {chatname} {count}</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6129772480128097710">😊</tg-emoji> <b>${ff('Greetings')}</b> <tg-emoji emoji-id="6129772480128097710">😊</tg-emoji> ║\n╚══════════════╝\n\n/setwelcome  /resetwelcome\n/welcome on|off  /cleanwelcome\n/setgoodbye  /resetgoodbye\n/goodbye on|off  /cleanservice\n\n<b>${ff('Placeholders')}:</b>\n{first} {last} {fullname} {username}\n{mention} {id} {chatname} {count}</blockquote>`,
     back: 'help_main',
   },
   help_rules: {
-    title: `<blockquote>╔══════════════╗\n║ 📜 <b>${ff('Rules')}</b> 📜 ║\n╚══════════════╝\n\n/setrules  /clearrules\n/rules  /privaterules on|off</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5192854926765616607">📌</tg-emoji> <b>${ff('Rules')}</b> <tg-emoji emoji-id="5192854926765616607">📌</tg-emoji> ║\n╚══════════════╝\n\n/setrules  /clearrules\n/rules  /privaterules on|off</blockquote>`,
     back: 'help_main',
   },
   help_locks: {
-    title: `<blockquote>╔══════════════╗\n║ 🔒 <b>${ff('Locks')}</b> 🔒 ║\n╚══════════════╝\n\n/lock type [type...]\n/unlock type\n/locks  /locktypes</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6267262260243076354">🛑</tg-emoji> <b>${ff('Locks')}</b> <tg-emoji emoji-id="6267262260243076354">🛑</tg-emoji> ║\n╚══════════════╝\n\n/lock type [type...]\n/unlock type\n/locks  /locktypes</blockquote>`,
     back: 'help_main',
   },
   help_flood: {
-    title: `<blockquote>╔══════════════╗\n║ 🌊 <b>${ff('Antiflood')}</b> 🌊 ║\n╚══════════════╝\n\n/setflood &lt;n&gt; or off\n/flood\n/floodmode mute|kick|ban|tmute &lt;dur&gt;</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5373135805353041178">💧</tg-emoji> <b>${ff('Antiflood')}</b> <tg-emoji emoji-id="5373135805353041178">💧</tg-emoji> ║\n╚══════════════╝\n\n/setflood &lt;n&gt; or off\n/flood\n/floodmode mute|kick|ban|tmute &lt;dur&gt;</blockquote>`,
     back: 'help_main',
   },
   help_black: {
-    title: `<blockquote>╔══════════════╗\n║ 🚫 <b>${ff('Blocklists')}</b> 🚫 ║\n╚══════════════╝\n\n/addblacklist word [word...]\n/rmblacklist word\n/blacklist\n/blacklistmode delete|warn|mute|kick|ban</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> <b>${ff('Blocklists')}</b> <tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> ║\n╚══════════════╝\n\n/addblacklist word [word...]\n/rmblacklist word\n/blacklist\n/blacklistmode delete|warn|mute|kick|ban</blockquote>`,
     back: 'help_main',
   },
   help_appr: {
-    title: `<blockquote>╔══════════════╗\n║ ✅ <b>${ff('Approval')}</b> ✅ ║\n╚══════════════╝\n\n/approve  /unapprove\n/approval  /approved\n/unapproveall</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> <b>${ff('Approval')}</b> <tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> ║\n╚══════════════╝\n\n/approve  /unapprove\n/approval  /approved\n/unapproveall</blockquote>`,
     back: 'help_main',
   },
   help_pins: {
-    title: `<blockquote>╔══════════════╗\n║ 📌 <b>${ff('Pins')}</b> 📌 ║\n╚══════════════╝\n\n/pin [silent]  /unpin  /unpinall\n/antichannelpin on|off</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5215486050046062421">📌</tg-emoji> <b>${ff('Pins')}</b> <tg-emoji emoji-id="5215486050046062421">📌</tg-emoji> ║\n╚══════════════╝\n\n/pin [silent]  /unpin  /unpinall\n/antichannelpin on|off</blockquote>`,
     back: 'help_main',
   },
   help_purges: {
-    title: `<blockquote>╔══════════════╗\n║ 🧹 <b>${ff('Purges')}</b> 🧹 ║\n╚══════════════╝\n\n/purge (reply)  /del (reply)\n/purgefrom + /purgeto</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5350444080084033572">✨</tg-emoji> <b>${ff('Purges')}</b> <tg-emoji emoji-id="5350444080084033572">✨</tg-emoji> ║\n╚══════════════╝\n\n/purge (reply)  /del (reply)\n/purgefrom + /purgeto</blockquote>`,
     back: 'help_main',
   },
   help_reports: {
-    title: `<blockquote>╔══════════════╗\n║ 🚨 <b>${ff('Reports')}</b> 🚨 ║\n╚══════════════╝\n\n/report (reply) — pings admins\n/reports on|off</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5215504548470204229">🚨</tg-emoji> <b>${ff('Reports')}</b> <tg-emoji emoji-id="5215504548470204229">🚨</tg-emoji> ║\n╚══════════════╝\n\n/report (reply) — pings admins\n/reports on|off</blockquote>`,
     back: 'help_main',
   },
   help_conn: {
-    title: `<blockquote>╔══════════════╗\n║ 🔗 <b>${ff('Connections')}</b> 🔗 ║\n╚══════════════╝\n\n/connect [chatId]\n/disconnect  /connection</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> <b>${ff('Connections')}</b> <tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> ║\n╚══════════════╝\n\n/connect [chatId]\n/disconnect  /connection</blockquote>`,
     back: 'help_main',
   },
   help_dis: {
-    title: `<blockquote>╔══════════════╗\n║ ⚙️ <b>${ff('Disabling')}</b> ⚙️ ║\n╚══════════════╝\n\n/disable cmd  /enable cmd\n/disabled  /disableable</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> <b>${ff('Disabling')}</b> <tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> ║\n╚══════════════╝\n\n/disable cmd  /enable cmd\n/disabled  /disableable</blockquote>`,
     back: 'help_main',
   },
   help_log: {
-    title: `<blockquote>╔══════════════╗\n║ 📡 <b>${ff('Log Channel')}</b> 📡 ║\n╚══════════════╝\n\n/setlog (forward from log ch)\n/logchannel  /unsetlog</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5215372534060428125">🔔</tg-emoji> <b>${ff('Log Channel')}</b> <tg-emoji emoji-id="5215372534060428125">🔔</tg-emoji> ║\n╚══════════════╝\n\n/setlog (forward from log ch)\n/logchannel  /unsetlog</blockquote>`,
     back: 'help_main',
   },
   help_captcha: {
-    title: `<blockquote>╔══════════════╗\n║ 🛡️ <b>${ff('CAPTCHA')}</b> 🛡️ ║\n╚══════════════╝\n\n/captcha on|off\n/captchamode button|math|text</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> <b>${ff('CAPTCHA')}</b> <tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> ║\n╚══════════════╝\n\n/captcha on|off\n/captchamode button|math|text</blockquote>`,
     back: 'help_main',
   },
   help_raid: {
-    title: `<blockquote>╔══════════════╗\n║ 🛡️ <b>${ff('AntiRaid')}</b> 🛡️ ║\n╚══════════════╝\n\n/antiraid on [duration] | off</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5215504548470204229">🚨</tg-emoji> <b>${ff('AntiRaid')}</b> <tg-emoji emoji-id="5215504548470204229">🚨</tg-emoji> ║\n╚══════════════╝\n\n/antiraid on [duration] | off</blockquote>`,
     back: 'help_main',
   },
   help_ddos: {
     title:
-      `<blockquote>╔══════════════╗\n║ 🛡️ <b>${ff('DDoS Protection')}</b> 🛡️ ║\n╚══════════════╝\n\n` +
+      `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6267262260243076354">🛑</tg-emoji> <b>${ff('DDoS Protection')}</b> <tg-emoji emoji-id="6267262260243076354">🛑</tg-emoji> ║\n╚══════════════╝\n\n` +
       `/ddos on|off|status\n\n` +
       `OFF by default — an admin must use <code>/ddos on</code>.\n` +
       `Detects message floods, repeated spam, mass joins and voice-chat mass invites.\n` +
@@ -120,7 +120,7 @@ const HELP_MENU = {
   },
   help_protect: {
     title:
-      `<blockquote>╔══════════════╗\n║ 🛡️ <b>${ff('Protection')}</b> 🛡️ ║\n╚══════════════╝\n\n` +
+      `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6100233580556849589">🌟</tg-emoji> <b>${ff('Protection')}</b> <tg-emoji emoji-id="6100233580556849589">🌟</tg-emoji> ║\n╚══════════════╝\n\n` +
       `/protection on|off — AI content protection\n` +
       `/strictmode on|off — mute non-admin offenders\n` +
       `/linkprotect on|off — remove links\n` +
@@ -130,39 +130,39 @@ const HELP_MENU = {
   },
   help_strict: {
     title:
-      `<blockquote>╔══════════════╗\n║ ⚙️ <b>${ff('Strict mode')}</b> ⚙️ ║\n╚══════════════╝\n\n` +
+      `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> <b>${ff('Strict mode')}</b> <tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> ║\n╚══════════════╝\n\n` +
       `/strictmode on|off\n\n` +
       `When enabled, prohibited content is removed and non-admin offenders are temporarily muted.</blockquote>`,
     back: 'help_main',
   },
   help_clean: {
-    title: `<blockquote>╔══════════════╗\n║ 🧽 <b>${ff('Cleaning')}</b> 🧽 ║\n╚══════════════╝\n\n/cleanservice on|off\n/cleancommand on|off</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5350444080084033572">✨</tg-emoji> <b>${ff('Cleaning')}</b> <tg-emoji emoji-id="5350444080084033572">✨</tg-emoji> ║\n╚══════════════╝\n\n/cleanservice on|off\n/cleancommand on|off</blockquote>`,
     back: 'help_main',
   },
   help_topics: {
-    title: `<blockquote>╔══════════════╗\n║ 🗂️ <b>${ff('Topics')}</b> 🗂️ ║\n╚══════════════╝\n\n/topic name (create)\n/closetopic  /opentopic\n/renametopic  /deletetopic</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5215538577496090960">💬</tg-emoji> <b>${ff('Topics')}</b> <tg-emoji emoji-id="5215538577496090960">💬</tg-emoji> ║\n╚══════════════╝\n\n/topic name (create)\n/closetopic  /opentopic\n/renametopic  /deletetopic</blockquote>`,
     back: 'help_main',
   },
   help_fed: {
-    title: `<blockquote>╔══════════════╗\n║ 🌐 <b>${ff('Federations')}</b> 🌐 ║\n╚══════════════╝\n\n/newfed name (in PM)\n/joinfed id  /leavefed\n/fedinfo  /fban  /unfban</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6129739490484294910">👑</tg-emoji> <b>${ff('Federations')}</b> <tg-emoji emoji-id="6129739490484294910">👑</tg-emoji> ║\n╚══════════════╝\n\n/newfed name (in PM)\n/joinfed id  /leavefed\n/fedinfo  /fban  /unfban</blockquote>`,
     back: 'help_main',
   },
   help_misc: {
-    title: `<blockquote>╔══════════════╗\n║ 🧰 <b>${ff('Misc')}</b> 🧰 ║\n╚══════════════╝\n\n/id  /info  /ping\n/runs  /stats  /echo</blockquote>`,
+    title: `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> <b>${ff('Misc')}</b> <tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> ║\n╚══════════════╝\n\n/id  /info  /ping\n/runs  /stats  /echo</blockquote>`,
     back: 'help_main',
   },
   help_eco: {
     title:
-      `<blockquote>╔══════════════╗\n║ 💰 <b>${ff('Economy')}</b> 💰 ║\n╚══════════════╝\n\n` +
+      `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5215725958329282459">💵</tg-emoji> <b>${ff('Economy')}</b> <tg-emoji emoji-id="5215725958329282459">💵</tg-emoji> ║\n╚══════════════╝\n\n` +
       `/balance — check wallet\n/daily — claim daily coins\n/weekly — weekly bonus\n/leaderboard — top richest\n/give &lt;amt&gt; (reply) — send coins\n\n` +
-      `<b>🗡 ${ff('Kill Game')}</b>\n/kill (reply) — earn <b>+100 coins</b>\n/protect 1day — shield <b>300 coins</b>\n/rob &lt;amt&gt; (reply) — steal coins</blockquote>`,
+      `<b><tg-emoji emoji-id="6100435100422378325">🔥</tg-emoji> ${ff('Kill Game')}</b>\n/kill (reply) — earn <b>+100 coins</b>\n/protect 1day — shield <b>300 coins</b>\n/rob &lt;amt&gt; (reply) — steal coins</blockquote>`,
     back: 'help_main',
   },
   help_games: {
     title:
-      `<blockquote>╔══════════════╗\n║ 🎮 <b>${ff('Games')}</b> 🎮 ║\n╚══════════════╝\n\n` +
+      `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5350447674971660988">🎮</tg-emoji> <b>${ff('Games')}</b> <tg-emoji emoji-id="5350447674971660988">🎮</tg-emoji> ║\n╚══════════════╝\n\n` +
       `🟩 /wordguess — 5-letter word guessing game\n🔤 /gamew &lt;word&gt; — submit your guess\n❓ /trivia — quick trivia (+25 coins)\n\n` +
-      `🔍 <b>/wordseek [theme]</b> — Word Search puzzle!\n` +
+      `<tg-emoji emoji-id="6100233580556849589">🌟</tg-emoji> <b>/wordseek [theme]</b> — Word Search puzzle!\n` +
       `   Words hidden in a 10×10 letter grid\n` +
       `   Themes: anime | nature | space | gaming | country\n` +
       `   Type any word to find it — earn <b>+40 coins</b> per word!\n` +
@@ -172,13 +172,13 @@ const HELP_MENU = {
   },
   help_anime: {
     title:
-      `<blockquote>╔══════════════╗\n║ 🌸 <b>${ff('Anime Actions')}</b> 🌸 ║\n╚══════════════╝\n\n` +
-      `/hug  /pat  /kiss  /slap  /poke\n/bite  /cuddle  /tickle  /wave\n/steal — steal a sticker (reply)\n\n<i>${ff('All send anime GIFs')} ✨</i></blockquote>`,
+      `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji> <b>${ff('Anime Actions')}</b> <tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji> ║\n╚══════════════╝\n\n` +
+      `/hug  /pat  /kiss  /slap  /poke\n/bite  /cuddle  /tickle  /wave\n/steal — steal a sticker (reply)\n\n<i>${ff('All send anime GIFs')} <tg-emoji emoji-id="5350444080084033572">✨</tg-emoji></i></blockquote>`,
     back: 'help_main',
   },
   help_ai: {
     title:
-      `<blockquote>╔══════════════╗\n║ 🤖 <b>${ff('AI Chatbot')}</b> 🤖 ║\n╚══════════════╝\n\n` +
+      `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6100233580556849589">🌟</tg-emoji> <b>${ff('AI Chatbot')}</b> <tg-emoji emoji-id="6100233580556849589">🌟</tg-emoji> ║\n╚══════════════╝\n\n` +
       `DM me normally, or in a group use <code>/chatbot on</code> and mention/reply to me.\n` +
       `<code>/chatbot on|off|status</code> — group control\n` +
       `<code>/resetmemory</code> — clear your saved conversation\n\n` +
@@ -189,31 +189,31 @@ const HELP_MENU = {
   },
   help_fmt: {
     title:
-      `<blockquote>╔══════════════╗\n║ 📐 <b>${ff('Formatting')}</b> 📐 ║\n╚══════════════╝\n\n` +
+      `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5350444080084033572">✨</tg-emoji> <b>${ff('Formatting')}</b> <tg-emoji emoji-id="5350444080084033572">✨</tg-emoji> ║\n╚══════════════╝\n\n` +
       `Notes/welcome/filters use <b>HTML</b>.\n<code>&lt;b&gt; &lt;i&gt; &lt;u&gt; &lt;s&gt; &lt;code&gt; &lt;pre&gt; &lt;a href=""&gt;</code>\n\n` +
       `<b>${ff('Placeholders')}:</b>\n{first} {last} {fullname} {username}\n{mention} {id} {chatname} {count}</blockquote>`,
     back: 'help_main',
   },
   help_priv: {
     title:
-      `<blockquote>╔══════════════╗\n║ 🔐 <b>${ff('Privacy')}</b> 🔐 ║\n╚══════════════╝\n\n` +
+      `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="6129739490484294910">👑</tg-emoji> <b>${ff('Privacy')}</b> <tg-emoji emoji-id="6129739490484294910">👑</tg-emoji> ║\n╚══════════════╝\n\n` +
       `AI moderation only inspects message text via Groq. No content stored beyond 5-min in-memory cache.\n` +
       `Chat memory stores up to 12 recent messages per user/chat in MongoDB.</blockquote>`,
     back: 'help_main',
   },
   help_io: {
     title:
-      `<blockquote>╔══════════════╗\n║ 📦 <b>${ff('Import / Export')}</b> 📦 ║\n╚══════════════╝\n\n` +
-      `${ff('Full chat-config export/import — coming soon!')} 🌸</blockquote>`,
+      `<blockquote>╔══════════════╗\n║ <tg-emoji emoji-id="5215440433198413312">🎁</tg-emoji> <b>${ff('Import / Export')}</b> <tg-emoji emoji-id="5215440433198413312">🎁</tg-emoji> ║\n╚══════════════╝\n\n` +
+      `${ff('Full chat-config export/import — coming soon!')} <tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji></blockquote>`,
     back: 'help_main',
   },
   about: {
     title:
-      `<blockquote>╔══════════════════════╗\n║  🌸  <b>${ff('About ѕσƒιуα')}</b>  🌸  ║\n╚══════════════════════╝\n\n` +
+      `<blockquote>╔══════════════════════╗\n║  <tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji>  <b>${ff('About ѕσƒιуα')}</b>  <tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji>  ║\n╚══════════════════════╝\n\n` +
       `A Rose-grade Telegram group manager with built-in Groq AI moderation, games, economy, and an AI chatbot persona.\n\n` +
-      `🛠️ <b>${ff('Stack')}</b>\n• Telegraf 4 + MongoDB\n• Groq Llama-3 for AI\n• NSFWJS vision guard\n\n` +
-      `👑 <b>${ff('Owner')}</b>: @lll_SHIV_lll\n` +
-      `👨‍💻 <b>${ff('Developer')}</b>: @sukoon_s</blockquote>`,
+      `<tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> <b>${ff('Stack')}</b>\n• Telegraf 4 + MongoDB\n• Groq Llama-3 for AI\n• NSFWJS vision guard\n\n` +
+      `<tg-emoji emoji-id="6129739490484294910">👑</tg-emoji> <b>${ff('Owner')}</b>: @lll_SHIV_lll\n` +
+      `<tg-emoji emoji-id="6271814813907685528">👨‍🏫</tg-emoji> <b>${ff('Developer')}</b>: @sukoon_s</blockquote>`,
     rows: [
       [[`👑 ${ff('Contact Owner')}`, 'owner_contact']],
     ],
@@ -241,10 +241,10 @@ async function handleCallbacks(ctx) {
   }
 
   if (data === 'wordseek_play') {
-    await ctx.answerCbQuery('🔍 Opening WordSeek Bot…', { show_alert: false });
+    await ctx.answerCbQuery('🌟 Opening WordSeek Bot…', { show_alert: false });
     try {
       await ctx.reply(
-        `<blockquote>🔍 <b>${ff('WordSeek Puzzle')}</b>\n\n${ff('Tap the button below to play Word Search!')}</blockquote>`,
+        `<blockquote><tg-emoji emoji-id="6100233580556849589">🌟</tg-emoji> <b>${ff('WordSeek Puzzle')}</b>\n\n${ff('Tap the button below to play Word Search!')}</blockquote>`,
         {
           parse_mode: 'HTML',
           ...Markup.inlineKeyboard([
