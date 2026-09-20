@@ -20,33 +20,37 @@ const LINK_REGEX = /(?:https?:\/\/|www\.)[^\s<>]+|t\.me\/[^\s<>]+/i;
 // ─── toggle command ──────────────────────────────────────────────────────────
 
 const linkprotect = async (ctx) => {
-  if (!ctx.isAdmin) return safeReply(ctx, '❌ Admins only.');
-  if (ctx.chat?.type === 'private') return safeReply(ctx, '❌ Only usable in groups.');
+  if (!ctx.isAdmin) return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Admins only.', { parse_mode: 'HTML' });
+  if (ctx.chat?.type === 'private') return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Only usable in groups.', { parse_mode: 'HTML' });
 
   const arg = ((ctx.message.text || '').split(/\s+/)[1] || '').toLowerCase();
   const group = await getGroup(ctx.chat.id);
 
   if (!arg) {
     return safeReply(ctx,
-      `🔗 <b>Link Protection</b>\n\n` +
-      `Current status: <b>${group.linkProtection ? '✅ ON' : '❌ OFF'}</b>\n\n` +
+      `<tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> <b>Link Protection</b>\n\n` +
+      `Current status: <b>${group.linkProtection ? '<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> ON' : '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> OFF'}</b>\n\n` +
       `<code>/linkprotect on</code>  — delete links sent by members\n` +
-      `<code>/linkprotect off</code> — allow links`);
+      `<code>/linkprotect off</code> — allow links`,
+      { parse_mode: 'HTML' }
+    );
   }
 
   if (arg === 'on') {
     await updateGroup(ctx.chat.id, { linkProtection: true });
     return safeReply(ctx,
-      `🔗 <b>Link Protection: ON</b>\n` +
-      `Any link sent by a non-admin will be automatically removed.`);
+      `<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> <b>Link Protection: ON</b>\n` +
+      `Any link sent by a non-admin will be automatically removed.`,
+      { parse_mode: 'HTML' }
+    );
   }
 
   if (arg === 'off') {
     await updateGroup(ctx.chat.id, { linkProtection: false });
-    return safeReply(ctx, `🔗 <b>Link Protection: OFF</b>\nMembers may now share links freely.`);
+    return safeReply(ctx, `<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> <b>Link Protection: OFF</b>\nMembers may now share links freely.`, { parse_mode: 'HTML' });
   }
 
-  return safeReply(ctx, '❌ Usage: <code>/linkprotect on</code> or <code>/linkprotect off</code>');
+  return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Usage: <code>/linkprotect on</code> or <code>/linkprotect off</code>', { parse_mode: 'HTML' });
 };
 
 // ─── middleware ──────────────────────────────────────────────────────────────
@@ -84,7 +88,7 @@ const linkProtectMiddleware = async (ctx, next) => {
 
   try {
     const warn = await ctx.reply(
-      `🔗 <b>Links Not Allowed!</b>\n` +
+      `<tg-emoji emoji-id="6267262260243076354">🛑</tg-emoji> <b>Links Not Allowed!</b>\n` +
       `${userTag}, promotions and links are not permitted in this group.\n` +
       `<i>Your message has been removed.</i>`,
       { parse_mode: 'HTML' }
