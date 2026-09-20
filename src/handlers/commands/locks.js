@@ -11,37 +11,41 @@ const LOCK_TYPES = [
 
 const lock = requireAdmin(async (ctx) => {
   const args = (ctx.message.text || '').split(/\s+/).slice(1).map((s) => s.toLowerCase()).filter(Boolean);
-  if (args.length === 0) return safeReply(ctx, '❌ Usage: <code>/lock &lt;type&gt; [type ...]</code>\n/locktypes for the list.');
+  if (args.length === 0) return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Usage: <code>/lock &lt;type&gt; [type ...]</code>\n/locktypes for the list.', { parse_mode: 'HTML' });
+  
   const added = [];
   for (const t of args) {
     if (!LOCK_TYPES.includes(t)) continue;
     await Lock.findOneAndUpdate({ chatId: ctx.chat.id, type: t }, {}, { upsert: true });
     added.push(t);
   }
-  if (added.length === 0) return safeReply(ctx, '❌ Unknown lock type. /locktypes for the list.');
-  await safeReply(ctx, `🔒 Locked: <b>${added.join(', ')}</b>`);
+  
+  if (added.length === 0) return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Unknown lock type. /locktypes for the list.', { parse_mode: 'HTML' });
+  await safeReply(ctx, `<tg-emoji emoji-id="5213415377593185638">⛔️</tg-emoji> Locked: <b>${added.join(', ')}</b>`, { parse_mode: 'HTML' });
 });
 
 const unlock = requireAdmin(async (ctx) => {
   const args = (ctx.message.text || '').split(/\s+/).slice(1).map((s) => s.toLowerCase()).filter(Boolean);
-  if (args.length === 0) return safeReply(ctx, '❌ Usage: <code>/unlock &lt;type&gt;</code>');
+  if (args.length === 0) return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Usage: <code>/unlock &lt;type&gt;</code>', { parse_mode: 'HTML' });
+  
   const removed = [];
   for (const t of args) {
     const r = await Lock.deleteOne({ chatId: ctx.chat.id, type: t });
     if (r.deletedCount) removed.push(t);
   }
-  if (removed.length === 0) return safeReply(ctx, '❌ None of those were locked.');
-  await safeReply(ctx, `🔓 Unlocked: <b>${removed.join(', ')}</b>`);
+  
+  if (removed.length === 0) return safeReply(ctx, '<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> None of those were locked.', { parse_mode: 'HTML' });
+  await safeReply(ctx, `<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Unlocked: <b>${removed.join(', ')}</b>`, { parse_mode: 'HTML' });
 });
 
 const locks = async (ctx) => {
   const list = await Lock.find({ chatId: ctx.chat.id }).lean();
-  if (list.length === 0) return safeReply(ctx, 'No locks here.');
-  await safeReply(ctx, `🔒 <b>Active locks:</b>\n${list.map((l) => `• ${escapeHtml(l.type)}`).join('\n')}`);
+  if (list.length === 0) return safeReply(ctx, '<tg-emoji emoji-id="5350444080084033572">✨</tg-emoji> No locks here.', { parse_mode: 'HTML' });
+  await safeReply(ctx, `<tg-emoji emoji-id="5213415377593185638">⛔️</tg-emoji> <b>Active locks:</b>\n${list.map((l) => `<tg-emoji emoji-id="5215486050046062421">📌</tg-emoji> ${escapeHtml(l.type)}`).join('\n')}`, { parse_mode: 'HTML' });
 };
 
 const locktypes = async (ctx) => {
-  await safeReply(ctx, `<b>Available lock types:</b>\n${LOCK_TYPES.map((t) => `• <code>${t}</code>`).join('\n')}`);
+  await safeReply(ctx, `<tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> <b>Available lock types:</b>\n${LOCK_TYPES.map((t) => `<tg-emoji emoji-id="5215486050046062421">📌</tg-emoji> <code>${t}</code>`).join('\n')}`, { parse_mode: 'HTML' });
 };
 
 function detectLockType(msg) {
@@ -77,8 +81,10 @@ function entityToLockType(e, text) {
 async function lockMiddleware(ctx, next) {
   if (!ctx.message || !ctx.chat || ctx.chat.type === 'private') return next();
   if (ctx.isAdmin) return next();
+  
   const list = await Lock.find({ chatId: ctx.chat.id }).lean();
   if (list.length === 0) return next();
+  
   const types = new Set(list.map((l) => l.type));
 
   if (types.has('all') || types.has('messages')) {
