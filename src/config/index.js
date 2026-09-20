@@ -31,7 +31,7 @@ module.exports = {
   loggerGroupId: process.env.LOGGER_GROUP_ID ? parseInt(process.env.LOGGER_GROUP_ID, 10) : null,
   logLevel:      process.env.LOG_LEVEL || 'info',
   port:          process.env.PORT || 3000,
-  pingImageUrl:  process.env.PING_IMAGE_URL || 'https://files.catbox.moe/yt6gy9.png',
+  pingImageUrl:  process.env.PING_IMAGE_URL || 'https://image.zaw-myo.workers.dev/image/e1b645af-123d-4e09-ba2a-07246847f308',
 
   // Telegram custom emoji IDs are optional. Pack links alone cannot be
   // rendered as message emoji by the Bot API, so aliases are configured via
