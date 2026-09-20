@@ -37,5 +37,5 @@ module.exports = {
   // rendered as message emoji by the Bot API, so aliases are configured via
   // PREMIUM_EMOJI_IDS (alias=id,alias=id).
   premiumEmojiIds: process.env.PREMIUM_EMOJI_IDS || '',
-  aiGamesEnabled: process.env.AI_GAMES_ENABLED !== 'false',
+  aiGamesEnabled: process.env.AI_GAMES_ENABLED !== 'true',
 };
