@@ -9,14 +9,14 @@ const { logEvent } = require('../../services/loggingService');
 const STICKER_SET = process.env.START_STICKER_SET || 'Koylakoyla_by_fStikBot';
 
 const LOADING_FRAMES = [
-  '✨ нℓσ вαву ✨',
+  '<tg-emoji emoji-id="5350444080084033572">✨</tg-emoji> нℓσ вαву <tg-emoji emoji-id="5350444080084033572">✨</tg-emoji>',
   `${ff('loading')}.`,
   `${ff('loading')}..`,
   `${ff('loading')}...`,
-  '🔥 вєтα',
-  '🔥 вєтα вσт',
-  '👑 вєтα вσт нυв',
-  '✅ ѕтαятє∂ 👑',
+  '<tg-emoji emoji-id="6267058648728474885">🔥</tg-emoji> вєтα',
+  '<tg-emoji emoji-id="6267058648728474885">🔥</tg-emoji> вєтα вσт',
+  '<tg-emoji emoji-id="6129739490484294910">👑</tg-emoji> вєтα вσт нυв',
+  '<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> ѕтαятє∂ <tg-emoji emoji-id="6129739490484294910">👑</tg-emoji>',
 ];
 
 const FRAME_DELAY_MS  = 220;
@@ -103,19 +103,19 @@ const startCommand = async (ctx) => {
   const startMsg =
     `<blockquote>` +
     `╔══════════════════════╗\n` +
-    `║  🌸  <b>ѕσƒιуα вσт</b>  🌸  ║\n` +
+    `║  <tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji>  <b>ѕσƒιуα вσт</b>  <tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji>  ║\n` +
     `╚══════════════════════╝\n\n` +
-    `👋 нєу, <b>${username}</b>!\n` +
+    `<tg-emoji emoji-id="6100469558944994144">😉</tg-emoji> нєу, <b>${username}</b>!\n` +
     `ι αɱ <b>ѕσƒιуα</b> — ყσυя αℓℓ-ιη-σηє\n` +
-    `🌺 Rσsє-Grα∂є Gяσυρ Mαηαɢєя 🌺\n\n` +
+    `<tg-emoji emoji-id="5305565606030887275">🌸</tg-emoji> Rσsє-Grα∂є Gяσυρ Mαηαɢєя <tg-emoji emoji-id="5305565606030887275">🌸</tg-emoji>\n\n` +
     `╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌\n` +
-    `⚡ <b>${ff('Uptime')}</b>  : ${upt}\n` +
-    `💾 <b>${ff('Memory')}</b>  : ${heapMB} MB\n` +
-    `🟢 <b>${ff('Node')}</b>    : ${process.version}\n` +
+    `<tg-emoji emoji-id="6082511510406436819">⚡️</tg-emoji> <b>${ff('Uptime')}</b>  : ${upt}\n` +
+    `<tg-emoji emoji-id="5350396951407895212">⚙️</tg-emoji> <b>${ff('Memory')}</b>  : ${heapMB} MB\n` +
+    `<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> <b>${ff('Node')}</b>    : ${process.version}\n` +
     `🖥️ <b>${ff('Host')}</b>    : ${os.hostname()}\n` +
     `╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌\n` +
-    `💡 υsє /help тσ sєє αℓℓ cσɱɱαη∂s\n` +
-    `🌸 <b>|ρσωєяє∂ вү вєтα вσт нυв|</b>` +
+    `<tg-emoji emoji-id="6100665125985851649">🔔</tg-emoji> υsє /help тσ sєє αℓℓ cσɱɱαη∂s\n` +
+    `<tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji> <b>|ρσωєяє∂ вү вєтα вσт нυв|</b>` +
     `</blockquote>`;
 
   const kb = Markup.inlineKeyboard([
@@ -124,7 +124,7 @@ const startCommand = async (ctx) => {
     ],
     [
       Markup.button.callback(`📜 ${ff('Commands')}`, 'help_main'),
-      Markup.button.url(`🌐 ${ff('Website')}`, 'https://beatbothub.netlify.app/'),
+      Markup.button.url(`🌐 ${ff('Website')}`, 'https://beatbot.app/'),
     ],
     [
       Markup.button.url(`👑 ${ff('My Lord')}`, 'https://t.me/SUKOON_S'),
