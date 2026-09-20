@@ -110,16 +110,16 @@ bot.start(startCommand);
 bot.help(async (ctx) => {
   const { Markup } = require('telegraf');
   const { ff } = require('./utils/font');
-  const { getStyleMap, styledLabel } = require('./utils/buttonStyles');
+  const { getStyleMap, styledLabel, premiumEmoji } = require('./utils/buttonStyles');
   const styles = getStyleMap();
   const button = (label, data, slot = 1) =>
-    Markup.button.callback(styledLabel(ff(label), styles[slot]), data);
+    Markup.button.callback(styledLabel(ff(label), styles[slot], label), data);
   const helpTitle =
     `<blockquote>` +
     `╔══════════════════════╗\n` +
-    `║  📜  <b>${ff('Sofiya Commands')}</b>  📜  ║\n` +
+    `║  ${premiumEmoji('Title')}  <b>${ff('Sofiya Commands')}</b>  ${premiumEmoji('Title')}  ║\n` +
     `╚══════════════════════╝\n\n` +
-    `sєℓєcт α cατєɢσяყ вєℓσω 👇` +
+    `sєℓєcт α cατєɢσяყ вєℓσω ${premiumEmoji('Arrow')}` +
     `</blockquote>`;
   const kb = Markup.inlineKeyboard([
     [button('Admin', 'help_admin', 1), button('Bans', 'help_bans', 3), button('Mutes', 'help_mutes', 3)],
