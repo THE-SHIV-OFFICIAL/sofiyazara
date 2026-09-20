@@ -8,7 +8,7 @@ const MAX_WORDS      = 6;
 const GAME_MS        = 10 * 60 * 1000; // 10 minutes per game
 const HINT_COST      = 25;             // coins per hint
 const WORD_REWARD    = 40;             // coins per word found
-const NO_HINT_BONUS  = 60;            // bonus for finishing with 0 hints
+const NO_HINT_BONUS  = 60;             // bonus for finishing with 0 hints
 
 // ─── Word themes ──────────────────────────────────────────────────────────────
 const THEMES = {
@@ -52,11 +52,11 @@ const THEMES = {
 };
 
 const THEME_EMOJIS = {
-  anime:   '🌸',
-  nature:  '🌿',
-  space:   '🚀',
-  gaming:  '🎮',
-  country: '🌍',
+  anime:   '<tg-emoji emoji-id="6172539951985464926">🌸</tg-emoji>',
+  nature:  '<tg-emoji emoji-id="5373135805353041178">💧</tg-emoji>',
+  space:   '<tg-emoji emoji-id="6129639980387015660">🚀</tg-emoji>',
+  gaming:  '<tg-emoji emoji-id="5350447674971660988">🎮</tg-emoji>',
+  country: '<tg-emoji emoji-id="5352629170465676759">✈️</tg-emoji>',
 };
 
 // ─── Grid generation ──────────────────────────────────────────────────────────
@@ -155,24 +155,24 @@ function renderGrid(grid) {
 function renderWordList(words, found) {
   return words.map(w =>
     found.has(w)
-      ? `✅ ${w}`
-      : `🔍 ${w}`
+      ? `<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> ${w}`
+      : `<tg-emoji emoji-id="5215486050046062421">📌</tg-emoji> ${w}`
   ).join('\n');
 }
 
 function buildMessage(sess) {
-  const emoji      = THEME_EMOJIS[sess.theme] || '🔤';
+  const emoji      = THEME_EMOJIS[sess.theme] || '<tg-emoji emoji-id="6100130376787694459">🔖</tg-emoji>';
   const minsLeft   = Math.max(0, Math.ceil((sess.expires - Date.now()) / 60_000));
   const foundCount = sess.found.size;
   const totalCount = sess.words.length;
 
   return (
     `${emoji} <b>${ff('Word Seek')}</b> — ${ff('Theme')}: <b>${sess.theme.toUpperCase()}</b>\n` +
-    `📊 ${foundCount}/${totalCount} found  •  ⏱ ${minsLeft} min left\n\n` +
+    `<tg-emoji emoji-id="6100593065024562684">📊</tg-emoji> ${foundCount}/${totalCount} found  •  <tg-emoji emoji-id="6285240160120477644">⏰</tg-emoji> ${minsLeft} min left\n\n` +
     `<code>${renderGrid(sess.grid)}</code>\n\n` +
     `<b>${ff('Words to find')}:</b>\n${renderWordList(sess.words, sess.found)}\n\n` +
-    `<i>💬 Just type any word to find it!\n` +
-    `💡 /wshint — hint (${HINT_COST} coins)  •  🛑 /stopwordseek — quit</i>`
+    `<i><tg-emoji emoji-id="5215538577496090960">💬</tg-emoji> Just type any word to find it!\n` +
+    `<tg-emoji emoji-id="5350444080084033572">✨</tg-emoji> /wshint — hint (${HINT_COST} coins)  •  <tg-emoji emoji-id="6267262260243076354">🛑</tg-emoji> /stopwordseek — quit</i>`
   );
 }
 
@@ -190,7 +190,7 @@ const wordseekStart = async (ctx) => {
 
   if (sessions.has(chatId)) {
     return ctx.reply(
-      `🎮 <b>${ff('Word Seek is already running!')}</b>\nType a word to find it, or /stopwordseek to end.`,
+      `<tg-emoji emoji-id="5350447674971660988">🎮</tg-emoji> <b>${ff('Word Seek is already running!')}</b>\nType a word to find it, or /stopwordseek to end.`,
       { parse_mode: 'HTML' }
     );
   }
@@ -227,9 +227,9 @@ const wordseekStart = async (ctx) => {
     const missed = s.words.filter(w => !s.found.has(w));
     try {
       await ctx.reply(
-        `⏰ <b>${ff('Word Seek timed out!')}</b>\n` +
-        `✅ Found: ${[...s.found].join(', ') || 'none'}\n` +
-        `❌ Missed: <b>${missed.join(', ')}</b>`,
+        `<tg-emoji emoji-id="6285240160120477644">⏰</tg-emoji> <b>${ff('Word Seek timed out!')}</b>\n` +
+        `<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Found: ${[...s.found].join(', ') || 'none'}\n` +
+        `<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Missed: <b>${missed.join(', ')}</b>`,
         { parse_mode: 'HTML' }
       );
     } catch {}
@@ -240,7 +240,7 @@ const wordseekStart = async (ctx) => {
 const stopWordseek = async (ctx) => {
   const sess = sessions.get(ctx.chat.id);
   if (!sess) {
-    return ctx.reply(`❌ ${ff('No active Word Seek game in this chat.')}`, { parse_mode: 'HTML' });
+    return ctx.reply(`<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> ${ff('No active Word Seek game in this chat.')}`, { parse_mode: 'HTML' });
   }
   clearTimeout(sess.timerRef);
   sessions.delete(ctx.chat.id);
@@ -248,9 +248,9 @@ const stopWordseek = async (ctx) => {
   const missed  = sess.words.filter(w => !sess.found.has(w));
   const foundArr = [...sess.found];
   await ctx.reply(
-    `🛑 <b>${ff('Word Seek stopped.')}</b>\n` +
-    `✅ Found (${foundArr.length}): ${foundArr.join(', ') || 'none'}\n` +
-    `❌ Missed (${missed.length}): <b>${missed.join(', ') || 'none'}</b>`,
+    `<tg-emoji emoji-id="6267262260243076354">🛑</tg-emoji> <b>${ff('Word Seek stopped.')}</b>\n` +
+    `<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> Found (${foundArr.length}): ${foundArr.join(', ') || 'none'}\n` +
+    `<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> Missed (${missed.length}): <b>${missed.join(', ') || 'none'}</b>`,
     { parse_mode: 'HTML' }
   );
 };
@@ -259,12 +259,12 @@ const stopWordseek = async (ctx) => {
 const wshint = async (ctx) => {
   const sess = sessions.get(ctx.chat.id);
   if (!sess) {
-    return ctx.reply(`❌ ${ff('No active Word Seek game.')}`, { parse_mode: 'HTML' });
+    return ctx.reply(`<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> ${ff('No active Word Seek game.')}`, { parse_mode: 'HTML' });
   }
 
   const unfound = sess.words.filter(w => !sess.found.has(w));
   if (!unfound.length) {
-    return ctx.reply(`✅ ${ff('All words are already found!')}`, { parse_mode: 'HTML' });
+    return ctx.reply(`<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> ${ff('All words are already found!')}`, { parse_mode: 'HTML' });
   }
 
   // Charge coins
@@ -273,7 +273,7 @@ const wshint = async (ctx) => {
                || await Wallet.create({ userId: ctx.from.id });
     if (wallet.coins < HINT_COST) {
       return ctx.reply(
-        `❌ ${ff('You need')} <b>${HINT_COST} coins</b> ${ff('for a hint.')} ` +
+        `<tg-emoji emoji-id="5215204871422093648">❌</tg-emoji> ${ff('You need')} <b>${HINT_COST} coins</b> ${ff('for a hint.')} ` +
         `${ff('You have')} <b>${wallet.coins}</b>.`,
         { parse_mode: 'HTML' }
       );
@@ -291,7 +291,7 @@ const wshint = async (ctx) => {
   sess.hints++;
 
   await ctx.reply(
-    `💡 <b>${ff('Hint')}</b> (-${HINT_COST} 💰)\n` +
+    `<tg-emoji emoji-id="5350444080084033572">✨</tg-emoji> <b>${ff('Hint')}</b> (-${HINT_COST} <tg-emoji emoji-id="5215725958329282459">💵</tg-emoji>)\n` +
     `The word <b>${word}</b> has the letter <b>${letter}</b> at row <b>${hr + 1}</b>, col <b>${hc + 1}</b>.`,
     { parse_mode: 'HTML' }
   );
@@ -345,16 +345,16 @@ async function wordseekMiddleware(ctx, next) {
               || await Wallet.create({ userId: playerId });
         w.coins += prize;
         await w.save();
-        rewardLines.push(`+${prize} 💰`);
+        rewardLines.push(`+${prize} <tg-emoji emoji-id="5215725958329282459">💵</tg-emoji>`);
       } catch {}
     }
 
     return ctx.reply(
-      `🏆 <b>${ff('Puzzle Complete!')}</b>\n\n` +
-      `${mention(ctx.from)} found the last word: <b>${guess}</b>! 🎉\n\n` +
-      `✅ <b>${ff('All words found')}:</b> ${sess.words.join(', ')}\n` +
-      `${sess.hints === 0 ? '⭐ No-hint bonus!\n' : ''}` +
-      `💰 <b>${ff('Coins awarded')}:</b> ${rewardLines.join(' ')}`,
+      `<tg-emoji emoji-id="6129739490484294910">👑</tg-emoji> <b>${ff('Puzzle Complete!')}</b>\n\n` +
+      `${mention(ctx.from)} found the last word: <b>${guess}</b>! <tg-emoji emoji-id="6100233580556849589">🌟</tg-emoji>\n\n` +
+      `<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> <b>${ff('All words found')}:</b> ${sess.words.join(', ')}\n` +
+      `${sess.hints === 0 ? '<tg-emoji emoji-id="6100233580556849589">🌟</tg-emoji> No-hint bonus!\n' : ''}` +
+      `<tg-emoji emoji-id="5215725958329282459">💵</tg-emoji> <b>${ff('Coins awarded')}:</b> ${rewardLines.join(' ')}`,
       { parse_mode: 'HTML' }
     );
   }
@@ -370,8 +370,8 @@ async function wordseekMiddleware(ctx, next) {
 
   const left = sess.words.filter(w => !sess.found.has(w)).length;
   await ctx.reply(
-    `✅ ${mention(ctx.from)} found <b>${guess}</b>! ` +
-    `+${WORD_REWARD} 💰 • ${left} word${left !== 1 ? 's' : ''} left.`,
+    `<tg-emoji emoji-id="6237651574588445185">✅</tg-emoji> ${mention(ctx.from)} found <b>${guess}</b>! ` +
+    `+${WORD_REWARD} <tg-emoji emoji-id="5215725958329282459">💵</tg-emoji> • ${left} word${left !== 1 ? 's' : ''} left.`,
     { parse_mode: 'HTML' }
   );
 
