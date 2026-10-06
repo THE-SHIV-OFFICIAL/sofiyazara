@@ -10,7 +10,7 @@
 
 <br/><br/>
 
-<img src="https://i.ibb.co/ttgM9BV/image.jpg" alt="Sofiya Showcase 1" width="86%" style="border-radius:24px; box-shadow:0 0 60px #6c63ff;"/>
+<img src="https://d.uguu.se/NLMpZCaC.jpg" alt="Sofiya Showcase 1" width="86%" style="border-radius:24px; box-shadow:0 0 60px #6c63ff;"/>
 
 <br/><br/>
 
@@ -18,7 +18,7 @@
 
 <br/><br/>
 
-<a href="#"><img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=34&duration=2400&pause=500&color=FF7EB3&background=00000000&center=true&vCenter=true&width=1000&height=80&lines=%F0%9F%8C%B8+SOFIYA+CHATBOT+%F0%9F%8C%B8;%F0%9F%A4%96+Smart+AI+Telegram+Assistant;%F0%9F%9B%A1%EF%B8%8F+Advanced+NSFW+Protection;%E2%9A%A1+Lightning+Fast+and+Reliable;%F0%9F%92%96+Powered+by+Madara" alt="title-typing"/></a>
+<a href="#"><img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=34&duration=2400&pause=500&color=FF7EB3&background=00000000&center=true&vCenter=true&width=1000&height=80&lines=%F0%9F%8C%B8+SOFIYA+CHATBOT+%F0%9F%8C%B8;%F0%9F%A4%96+Smart+AI+Telegram+Assistant;%F0%9F%9B%A1%EF%B8%8F+Advanced+NSFW+Protection;%E2%9A%A1+Lightning+Fast+and+Reliable;%F0%9F%92%96+Powered+by+THE SHIV" alt="title-typing"/></a>
 
 <a href="#"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=3000&pause=400&color=FACC15&background=00000000&center=true&vCenter=true&width=850&lines=%F0%9F%92%AC+Context-Aware+Conversations;%F0%9F%93%B7+Image+Analysis+Support;%F0%9F%91%AE+Group+Moderation+Tools;%E2%98%81%EF%B8%8F+Railway+%E2%80%A2+Render+%E2%80%A2+Docker+Ready;%F0%9F%92%AB+Elegant+Anime-Inspired+UI" alt="features-typing"/></a>
 
