@@ -237,12 +237,7 @@ Designed with an elegant anime-inspired interface, this bot is ideal for anyone 
 
 ### 📦 INSTALL LOCALLY
 
-```bash
-git clone https://github.com/ragini19854-prog/ROSE_CHATBOT.git
-cd ROSE_CHATBOT
-pip install -U -r requirements.txt
-python main.py
-```
+
 
 ### ⚙️ ENVIRONMENT VARIABLES
 
@@ -311,7 +306,7 @@ ROSE_CHATBOT/
 
 > ### 💜 *"Never go back on your word, because that is your ninja way."*
 >
-> ### — **Sofiya Hyuga**
+> ### — **Sofiya **
 
 </td></tr></table>
 </div>
@@ -328,7 +323,7 @@ ROSE_CHATBOT/
 
 <br/><br/>
 
-### ⚡ MADARA ⚡
+### ⚡ THE SHIV ⚡
 
 **Crafting premium Telegram bots with anime-inspired design.**
 
