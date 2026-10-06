@@ -10,8 +10,6 @@
 
 <br/><br/>
 
-<img src="https://d.uguu.se/NLMpZCaC.jpg" alt="Sofiya Showcase 1" width="86%" style="border-radius:24px; box-shadow:0 0 60px #6c63ff;"/>
-
 <br/><br/>
 
 <img src="https://i.ibb.co/JWnXps3t/image.jpg" alt="Sofiya Showcase 2" width="86%" style="border-radius:24px; box-shadow:0 0 60px #8be9fd;"/>
